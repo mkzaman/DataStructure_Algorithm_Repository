@@ -135,6 +135,26 @@ void DeleteAtnthPosition(int position)
 	}
 }
 
+void ReverseLinkedList()
+{
+	if (Head == NULL)
+	{
+		cout << "The list is Empty" << endl;
+		return;
+	}
+	Node *current, *previous, *next;
+	current = Head;
+	previous = NULL;
+	while (current != NULL)
+	{
+		next = current->next;
+		current->next = previous;
+		previous = current;
+		current = next;
+	}
+	Head = previous;
+}
+
 int main()
 {
 	Head = NULL;
@@ -142,6 +162,7 @@ int main()
 	InsertInTheEnd(4);
 	InsertInTheEnd(6);
 	TraverseTheLinkedList();
+	ReverseLinkedList();
 	DeleteAtnthPosition(2);
 	cout << "After Delete at position 2 : " << endl;
 	TraverseTheLinkedList();
