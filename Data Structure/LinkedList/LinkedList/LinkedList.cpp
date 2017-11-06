@@ -163,6 +163,7 @@ int main()
 	InsertInTheEnd(6);
 	TraverseTheLinkedList();
 	ReverseLinkedList();
+	TraverseTheLinkedList();
 	DeleteAtnthPosition(2);
 	cout << "After Delete at position 2 : " << endl;
 	TraverseTheLinkedList();
