@@ -55,19 +55,28 @@ void InsertValueAtnthPosition(int value, int position)
 {
 	if (Head != NULL)
 	{
-		//Node* start = Head;
+		if (position < 2)
+		{
+			cout << "Please insert at the beginning!" <<endl;
+			return;
+		}
 		Node* temp = new Node();
 		temp->data = value;
 		Node* traverse = Head;
-		int count = 1;
+		int count = 2;
 		while (count < position)
 		{
 			count++;
+			if (traverse == NULL)
+			{
+				cout << "Insert option is out of range!" << endl;
+				return;
+			}
 			traverse = traverse->next;
 		}
-		Node* temp1 = traverse;
+		Node* temp1 = traverse->next;
+		temp->next = temp1;
 		traverse->next = temp;
-		temp->next = temp1->next;
 	}
 	else
 	{
@@ -93,6 +102,39 @@ void TraverseTheLinkedList()
 	}
 }
 
+void DeleteAtnthPosition(int position)
+{
+	if (Head == NULL)
+	{
+		cout << "No element in the list" << endl;
+		return;
+	}
+	if (position == 1)
+	{
+		Head = Head->next;
+	}
+	else
+	{
+		Node* current = Head;
+		int count = 1;
+		while (count < position)
+		{
+			if (current == NULL)
+			{
+				cout << "Out of range request" << endl;
+			}
+			count++;
+			Node* previous = current;
+			current = current->next;
+			if (count == position)
+			{
+				previous->next = current->next;
+				return;
+			}
+		}
+	}
+}
+
 int main()
 {
 	Head = NULL;
@@ -100,8 +142,11 @@ int main()
 	InsertInTheEnd(4);
 	InsertInTheEnd(6);
 	TraverseTheLinkedList();
-	InsertValueAtnthPosition(5, 2);
+	DeleteAtnthPosition(2);
+	cout << "After Delete at position 2 : " << endl;
+	TraverseTheLinkedList();
+	DeleteAtnthPosition(1);
+	cout << "After Delete at position 1 : " << endl;
 	TraverseTheLinkedList();
     return 0;
 }
-
