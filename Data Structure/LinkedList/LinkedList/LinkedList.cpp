@@ -9,9 +9,9 @@ struct Node
 	int data;
 	Node* next;
 };
-Node* Head;
 
-void InsertInTheEnd(int value)
+
+void InsertInTheEnd(Node *Head,int value)
 {
 	Node* temp = Head;
 	if (temp != NULL)
@@ -34,7 +34,7 @@ void InsertInTheEnd(int value)
 	}
 }
 
-void InsertInTheBeginning(int value)
+void InsertInTheBeginning(Node *Head, int value)
 {
 	Node* temp1 = new Node();
 	temp1->data = value;
@@ -51,7 +51,7 @@ void InsertInTheBeginning(int value)
 	}
 }
 
-void InsertValueAtnthPosition(int value, int position)
+void InsertValueAtnthPosition(Node *Head, int value, int position)
 {
 	if (Head != NULL)
 	{
@@ -84,7 +84,7 @@ void InsertValueAtnthPosition(int value, int position)
 	}
 }
 
-void TraverseTheLinkedList()
+void TraverseTheLinkedList(Node *Head)
 {
 	if (Head != NULL)
 	{
@@ -102,7 +102,7 @@ void TraverseTheLinkedList()
 	}
 }
 
-void DeleteAtnthPosition(int position)
+void DeleteAtnthPosition(Node *Head, int position)
 {
 	if (Head == NULL)
 	{
@@ -135,40 +135,38 @@ void DeleteAtnthPosition(int position)
 	}
 }
 
-void ReverseLinkedList()
+void TraverseUsingRecursion(Node *Head)
 {
 	if (Head == NULL)
 	{
-		cout << "The list is Empty" << endl;
 		return;
 	}
-	Node *current, *previous, *next;
-	current = Head;
-	previous = NULL;
-	while (current != NULL)
+	cout << Head->data << endl;
+	TraverseUsingRecursion(Head->next);
+}
+
+void PrintBackWard(Node *Head)
+{
+	if (Head == NULL)
 	{
-		next = current->next;
-		current->next = previous;
-		previous = current;
-		current = next;
+		return;
 	}
-	Head = previous;
+	PrintBackWard(Head->next);
+	cout << Head->data << endl;
 }
 
 int main()
 {
-	Head = NULL;
-	InsertInTheEnd(2);
-	InsertInTheEnd(4);
-	InsertInTheEnd(6);
-	TraverseTheLinkedList();
-	ReverseLinkedList();
-	TraverseTheLinkedList();
-	DeleteAtnthPosition(2);
+	Node* Head = NULL;
+	InsertInTheEnd(Head, 2);
+	InsertInTheEnd(Head, 4);
+	InsertInTheEnd(Head, 6);
+	TraverseTheLinkedList(Head);
+	DeleteAtnthPosition(Head, 2);
 	cout << "After Delete at position 2 : " << endl;
-	TraverseTheLinkedList();
-	DeleteAtnthPosition(1);
+	TraverseTheLinkedList(Head);
+	DeleteAtnthPosition(Head, 1);
 	cout << "After Delete at position 1 : " << endl;
-	TraverseTheLinkedList();
+	TraverseTheLinkedList(Head);
     return 0;
 }
