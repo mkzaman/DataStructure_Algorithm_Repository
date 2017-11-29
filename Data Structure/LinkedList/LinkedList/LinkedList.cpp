@@ -135,6 +135,26 @@ void DeleteAtnthPosition(Node *Head, int position)
 	}
 }
 
+void ReverseLinkedList(Node *Head)
+{
+	if (Head == NULL)
+	{
+		cout << "The list is Empty" << endl;
+		return;
+	}
+	Node *current, *previous, *next;
+	current = Head;
+	previous = NULL;
+	while (current != NULL)
+	{
+		next = current->next;
+		current->next = previous;
+		previous = current;
+		current = next;
+	}
+	Head = previous;
+}
+
 void TraverseUsingRecursion(Node *Head)
 {
 	if (Head == NULL)
