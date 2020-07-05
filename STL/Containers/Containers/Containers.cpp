@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 
+
 using namespace std;
 
 //vector starts
@@ -95,6 +96,23 @@ void vector_processing()
 }
 
 //vector ends
+
+//pair starts
+
+void pair_processing()
+{
+    pair<int, int> x;
+    x.first = 1;
+    x.second = 3;
+
+    pair<string, pair<int, int>> y;
+    y.first = "hello";
+    y.second.first = 10;
+    y.second.second = 20;
+}
+
+
+//pair ends
 
 int main()
 {
