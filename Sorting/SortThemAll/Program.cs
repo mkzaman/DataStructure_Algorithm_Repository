@@ -6,7 +6,7 @@ namespace SortThemAll
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {
             ISort sort = new InsertionSort();
             List<int> x = new List<int>{ 5, 8, 6, 1, 7, 9 };

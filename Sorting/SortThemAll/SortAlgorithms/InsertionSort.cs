@@ -11,13 +11,15 @@ namespace SortThemAll.SortAlgorithms
         {
             for(int i=0; i<sortable.Count; i++)
             {
-                for(int j=i; j>=0; j--)
+                T current = sortable[i];
+                int currentPosition = i;
+                for(int j=i-1; j>=0; j--)
                 {
-                    if (Comparer<T>.Default.Compare(sortable[i], sortable[j]) < 0)
+                    if (Comparer<T>.Default.Compare(current, sortable[j]) < 0)
                     {
-                        T temp = sortable[i];
-                        sortable[i] = sortable[j];
-                        sortable[j] = temp;
+                        sortable[currentPosition] = sortable[j];
+                        sortable[j] = current;
+                        currentPosition = j;
                     }
                 }
             }
