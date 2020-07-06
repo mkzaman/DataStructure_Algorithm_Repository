@@ -1,3 +1,5 @@
+using NUnit.Framework;
+
 namespace SortingTest
 {
     public class Tests
