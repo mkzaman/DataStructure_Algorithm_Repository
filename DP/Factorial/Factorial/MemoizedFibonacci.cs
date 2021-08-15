@@ -6,22 +6,22 @@ namespace Factorial
 {
     public class MemoizedFibonacci : IFibonacci
     {
-        Dictionary<UInt64, UInt64> factorialMemoization = new Dictionary<UInt64, UInt64>();
-        public UInt64 Factorial(UInt64 n)
+        Dictionary<UInt64, UInt64> fibonacciMemoization = new Dictionary<UInt64, UInt64>();
+        public UInt64 Fibonacci(UInt64 n)
         {
             if(n == 0 || n == 1)
             {
                 return 1;
             }
 
-            if(factorialMemoization.ContainsKey(n))
+            if(fibonacciMemoization.ContainsKey(n))
             {
-                return factorialMemoization[n];
+                return fibonacciMemoization[n];
             }
 
-            UInt64 temp = Factorial(n - 1) + Factorial(n - 2);
+            UInt64 temp = Fibonacci(n - 1) + Fibonacci(n - 2);
 
-            factorialMemoization.Add(n, temp);
+            fibonacciMemoization.Add(n, temp);
 
             return temp;
         }

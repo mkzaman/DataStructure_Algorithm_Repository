@@ -6,14 +6,14 @@ namespace Factorial
 {
     class ClassicRecursiveFibonacci : IFibonacci
     {
-        public UInt64 Factorial(UInt64 n)
+        public UInt64 Fibonacci(UInt64 n)
         {
             if(n == 0 || n == 1)
             {
                 return 1;
             }
 
-            return Factorial(n - 1) + Factorial(n - 2);
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
         }
     }
 }

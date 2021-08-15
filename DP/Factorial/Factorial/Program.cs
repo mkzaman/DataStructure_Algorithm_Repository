@@ -12,11 +12,11 @@ namespace Factorial
 
             IFibonacci factorial = new ClassicRecursiveFibonacci();
 
-            factorial.Factorial(50);
+            factorial.Fibonacci(30);
 
             watch.Stop();
 
-            Console.WriteLine("Classic Recursive Factorial for n = 30 : " + watch.ElapsedTicks);
+            Console.WriteLine("Classic Recursive Fibonacci for n = 30 : " + watch.ElapsedTicks);
 
             watch.Reset();
 
@@ -24,11 +24,11 @@ namespace Factorial
 
             factorial = new MemoizedFibonacci();
 
-            factorial.Factorial(50);
+            factorial.Fibonacci(30);
 
             watch.Stop();
 
-            Console.WriteLine("Classic Memoized Factorial for n = 30 : " + watch.ElapsedTicks);
+            Console.WriteLine("Classic Memoized Fibonacci for n = 30 : " + watch.ElapsedTicks);
 
             watch.Reset();
 
@@ -36,11 +36,11 @@ namespace Factorial
 
             factorial = new BottomUpFibonacci();
 
-            factorial.Factorial(50);
+            factorial.Fibonacci(30);
 
             watch.Stop();
 
-            Console.WriteLine("Classic Bottom Up Factorial for n = 30 : " + watch.ElapsedTicks);
+            Console.WriteLine("Classic Bottom Up Fibonacci for n = 30 : " + watch.ElapsedTicks);
 
             watch.Reset();
         }

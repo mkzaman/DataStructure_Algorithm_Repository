@@ -6,6 +6,6 @@ namespace Factorial
 {
     interface IFibonacci
     {
-        UInt64 Factorial(UInt64 n);
+        UInt64 Fibonacci(UInt64 n);
     }
 }

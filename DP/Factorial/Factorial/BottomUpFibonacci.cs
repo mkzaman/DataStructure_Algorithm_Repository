@@ -6,7 +6,7 @@ namespace Factorial
 {
     class BottomUpFibonacci : IFibonacci
     {
-        public ulong Factorial(ulong n)
+        public ulong Fibonacci(ulong n)
         {
             ulong a = 1, b = 1;
 
