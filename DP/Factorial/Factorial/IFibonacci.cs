@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Factorial
 {
-    interface IFactorial
+    interface IFibonacci
     {
         UInt64 Factorial(UInt64 n);
     }

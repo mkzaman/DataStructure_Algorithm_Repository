@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Factorial
 {
-    class BottomUpFactorial : IFactorial
+    class BottomUpFibonacci : IFibonacci
     {
         public ulong Factorial(ulong n)
         {

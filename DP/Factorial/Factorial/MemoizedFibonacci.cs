@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Factorial
 {
-    public class MemoizedFactorial : IFactorial
+    public class MemoizedFibonacci : IFibonacci
     {
         Dictionary<UInt64, UInt64> factorialMemoization = new Dictionary<UInt64, UInt64>();
         public UInt64 Factorial(UInt64 n)

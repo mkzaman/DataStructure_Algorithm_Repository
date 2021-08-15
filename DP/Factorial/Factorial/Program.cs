@@ -10,7 +10,7 @@ namespace Factorial
 
             watch.Start();
 
-            IFactorial factorial = new ClassicRecursiveFactorial();
+            IFibonacci factorial = new ClassicRecursiveFibonacci();
 
             factorial.Factorial(50);
 
@@ -22,7 +22,7 @@ namespace Factorial
 
             watch.Start();
 
-            factorial = new MemoizedFactorial();
+            factorial = new MemoizedFibonacci();
 
             factorial.Factorial(50);
 
@@ -34,7 +34,7 @@ namespace Factorial
 
             watch.Start();
 
-            factorial = new BottomUpFactorial();
+            factorial = new BottomUpFibonacci();
 
             factorial.Factorial(50);
 

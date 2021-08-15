@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Factorial
 {
-    class ClassicRecursiveFactorial : IFactorial
+    class ClassicRecursiveFibonacci : IFibonacci
     {
         public UInt64 Factorial(UInt64 n)
         {
